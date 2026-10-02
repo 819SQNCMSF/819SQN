@@ -6,4 +6,4 @@
 - Orient reply: 6 lines or fewer, then wait.
 ## Open questions
 - Image-Generator scope: confirm or correct the 1-line scope in the `Image-Generator` branch `CLAUDE.md`.
-- Third-party services: add a rule requiring the user's approval before sending files to an external image service?
+- Image-Generator generation route (code-rendered images or an approved external service) is unverified: ask the user.

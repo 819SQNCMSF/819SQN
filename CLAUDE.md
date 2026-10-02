@@ -24,10 +24,11 @@
 - Branch `<name>`: one sub-repo, an orphan branch of this repo, listed under "Sub-repos" in `navigation.md`.
 
 ## Building a sub-repo (only when the user asks)
-1. If not already given, ask once: subject, scope in 1–2 lines, source files, proposed name.
+1. If not already given, ask once: subject, scope in 1–2 lines, source files, proposed name, what it produces, and any external service it may use.
 2. Create the orphan branch `<name>`, built in a separate git worktree so this branch's files stay untouched, containing: verbatim copies of `RULEBOOK.md` and both skill folders; a short sub-repo `CLAUDE.md` (purpose, the same Orient steps, the skills list; no repeated rules, same read-only notes); empty `navigation.md` and `session-memory.md`; `archive (to ignore)/` with the subfolders `originals/`, `history/` and `finished-work/`, each holding a `.gitkeep`. Show the user the new CLAUDE.md before finishing.
-3. Convert the supplied files with file-simplifier and build the sub-repo's `navigation.md`.
-4. Add one line to "Sub-repos" in this branch's `navigation.md` (name, subject, scope, branch, status) and push the new branch to origin.
+3. Add what the subject needs to work properly to the sub-repo `CLAUDE.md`: a folder for what it produces, named under Special paths, excluded from the Orient raw-file command and exempt from file-simplifier; and, if it can reach an external service, the rule that the user is asked before any prompt, file or image is sent to it. Mark anything you cannot verify as unverified and ask the user.
+4. Convert the supplied files with file-simplifier and build the sub-repo's `navigation.md`.
+5. Add one line to "Sub-repos" in this branch's `navigation.md` (name, subject, scope, branch, status) and push the new branch to origin.
 
 ## Changing the configuration
 Configuration means this file, `RULEBOOK.md` and the `SKILL.md` files. Never change it unasked. After the user approves a change and it is applied, offer to prepare the same change for every sub-repo listed in `navigation.md`.
