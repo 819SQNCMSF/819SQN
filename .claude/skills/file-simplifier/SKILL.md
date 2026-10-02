@@ -1,13 +1,13 @@
 ---
 name: file-simplifier
-description: Convert a newly added non-markdown file (PDF, Word, PowerPoint, Excel, image, scan, HTML, ebook) into a compact, token-cheap .md twin, then move the original into "archive (to ignore)/" so sessions only ever read the .md. Use whenever a new file is added, uploaded, attached or found without a .md twin, and whenever the user says convert, simplify, ingest, import, add this file or put this in the repo, even if they never mention markdown.
+description: Convert a newly added non-markdown file (PDF, Word, PowerPoint, Excel, image, scan, HTML, ebook) into a compact, token-cheap .md twin, then move the original into "archive (to ignore)/originals/" so sessions only ever read the .md. Use whenever a new file is added, uploaded, attached or found without a .md twin, and whenever the user says convert, simplify, ingest, import, add this file or put this in the repo, even if they never mention markdown.
 ---
 
 > **READ-ONLY FILE:** this file is read only, and any change to it requires the user's explicit approval beforehand.
 
 # file-simplifier
 
-Purpose: pay tokens once so every later session reads a small, clean `.md` instead of the original. After conversion, sessions use the `.md` only; the original goes to `archive (to ignore)/`, which is for the user and never for a session (RULEBOOK A2).
+Purpose: pay tokens once so every later session reads a small, clean `.md` instead of the original. After conversion, sessions use the `.md` only; the original goes to `archive (to ignore)/originals/`, which is for the user and never for a session (RULEBOOK A2).
 
 ## When
 - A new file is added or attached, or the new-raw-file command in CLAUDE.md lists a file with no `.md` twin.
@@ -25,7 +25,7 @@ Purpose: pay tokens once so every later session reads a small, clean `.md` inste
 3. **Rebuild** into the target format below.
 4. **Verify before archiving**, without re-reading the original in full: section and page counts roughly match; every table and figure is accounted for; spot-check 5 numbers or names against the source pages. Mark gaps `[unclear: …]`. Never fill them.
 5. **Index** it: add an entry to `navigation.md` using the `.md` frontmatter summary (repo-navigation skill).
-6. **Archive** the original: move it into `archive (to ignore)/` keeping its name (`git mv` if tracked, otherwise `mv`). On a name clash append `-YYYYMMDD`. Test only the exact target path; never list the folder.
+6. **Archive** the original: move it into `archive (to ignore)/originals/` keeping its name (`git mv` if tracked, otherwise `mv`). On a name clash append `-YYYYMMDD`. Test only the exact target path; never list the folder.
 7. **Report** in two lines: the new path, the size reduction, and any `[unclear]` items.
 
 After step 6 the original is off limits. If the conversion turns out wrong, fix the `.md` from what it already contains, or tell the user so they can re-add the original.
@@ -38,7 +38,7 @@ After step 6 the original is off limits. If the conversion turns out wrong, fix 
   title: …
   summary: 1–2 sentences, in the words a user would ask with
   keywords: [main terms, synonyms]
-  original: archive (to ignore)/report.pdf   # name only, never open
+  original: archive (to ignore)/originals/report.pdf   # name only, never open
   route: webfetch | local-tool | read-chunks | third-party | user-twin
   fidelity: high | medium | low (why)
   ---
