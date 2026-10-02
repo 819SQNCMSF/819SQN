@@ -14,13 +14,13 @@ Image-Generator is a topic sub-repo of the 819SQN library, held as the `Image-Ge
    ```
 
 ## Skills (`.claude/skills/`, loaded only when triggered)
-- **file-simplifier**: a new non-markdown file arrives. Convert it to a compact `.md`, move the original to `archive (to ignore)/`, then use only the `.md`.
+- **file-simplifier**: a new non-markdown file arrives. Convert it to a compact `.md`, move the original to `archive (to ignore)/originals/`, then use only the `.md`.
 - **repo-navigation**: build, update or consult `navigation.md`, the keyword-routed map of this branch.
 
 ## Special paths
 - `navigation.md`: repo map.
 - `session-memory.md`: working memory.
-- `archive (to ignore)/`: originals and `NOT-CURRENT-TRUTH_*` history files, user-only except as RULEBOOK A2 and F3 allow.
+- `archive (to ignore)/`: subfolders `originals/`, `history/` and `finished-work/`; user-only except as RULEBOOK A2 and F3 allow.
 
 ## Rules (imported)
 @RULEBOOK.md
